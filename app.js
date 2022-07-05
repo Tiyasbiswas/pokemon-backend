@@ -25,5 +25,18 @@ app.get("/pokemon/:id", (req, res) => {
   res.send(jsonData.find(e => e.id == req.params.id)) 
 });
 
+// app.get("/pokemon/:id/:info", (req, res) => {
+//   const pokemon_id = jsonData[req.params.id];
+//   const pokemon_type = pokemon_id[req.params.info];
+
+//   console.log(pokemon_type);
+//   res.send(`
+//           <h1>${pokemon_type.type}</h1>
+          
+//     `);
+// });
+
 
 app.listen(port, () => console.log(`started listening on port ${port}`));
+
+
