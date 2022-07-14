@@ -8,22 +8,22 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) =>
-  res.send("Hello")
+  res.send(jsonData)
 );
-app.get("/pokemon", (req, res) =>
-res.send(`<ul>
-  ${
-    jsonData.map(item => `
-      <li>
-        <p>${item.name}</p>
-         <p>Type:${item.type}</p>
-         <p>Base:${item.base}</p>
-      </li>`
-    )
-    .join("")
-  }
-  </ul>`
-));
+// app.get("/pokemon", (req, res) =>
+// res.send(`<ul>
+//   ${
+//     jsonData.map(item => `
+//       <li>
+//         <p>${item.name}</p>
+//          <p>Type:${item.type}</p>
+//          <p>Base:${item.base}</p>
+//       </li>`
+//     )
+//     .join("")
+//   }
+//   </ul>`
+// ));
 
 app.get("/pokemon/:id", (req, res) => {
   res.send(jsonData.find(e => e.id == req.params.id)) 
