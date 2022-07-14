@@ -5,6 +5,7 @@ const jsonData= require("./data.json");
 const port=process.env.PORT || 8080;
 const app= express();
 app.use(cors());
+app.use(express.json());
 
 app.get("/", (req, res) =>
   res.send("Hello")
@@ -14,9 +15,9 @@ res.send(`<ul>
   ${
     jsonData.map(item => `
       <li>
-        <p>${item.name.english}</p>
-        <p>Type:${item.type}</p>
-        <p>Base:${item.base}</p>
+        <p>${item.name}</p>
+         <p>Type:${item.type}</p>
+         <p>Base:${item.base}</p>
       </li>`
     )
     .join("")
