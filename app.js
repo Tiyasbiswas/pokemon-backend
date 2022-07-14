@@ -7,7 +7,7 @@ const app= express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) =>
+app.get("/pokemon", (req, res) =>
   res.send(jsonData)
 );
 // app.get("/pokemon", (req, res) =>
