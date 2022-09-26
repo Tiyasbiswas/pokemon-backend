@@ -29,6 +29,10 @@ app.get("/pokemon/:id", (req, res) => {
   res.send(jsonData.find(e => e.id == req.params.id)) 
 });
 
+app.get("/pokemon/:name", (req, res) => {
+  res.send(jsonData.find(e => e.name.english == req.params.name.english)) 
+});
+
 app.get("/pokemon/:pid/:p_type", function(req, res){
   const pids=jsonData[req.params.pid-1];
   console.log("-----------------",pids);
